@@ -1,0 +1,70 @@
+.header-main {
+	position: relative;
+
+	&::after {
+		position: absolute;
+		content: '';
+		z-index: 100;
+		width: 100%;
+		height: calc(#{$index} * 10);
+		background-image: url('../assets/img/ground.png');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		bottom: calc(#{$index} * -4.5);
+	}
+}
+
+.layers {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+}
+
+.layer-head {
+	z-index: 1;
+	transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+	transition: $transition;
+	text-transform: uppercase;
+	font-weight: 900;
+	color: $text;
+	text-shadow: 0 0 20px #ba9827;
+}
+
+.caption {
+	transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+	font-size: calc(#{$index} / 1.17);
+	letter-spacing: calc(#{$index} / 3.5);
+	margin: calc(#{$index} * -0.75);
+}
+
+.title {
+	font-size: calc(#{$index} * 2.75);
+	letter-spacing: calc(#{$index} / 3.5);
+}
+
+.img-layer {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background-size: cover;
+	background-position: center;
+	will-change: transform;
+}
+
+.layer-base {
+	transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+	z-index: 0;
+}
+
+.layer-mid {
+	transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+}
+
+.layer-front {
+	transform: translate3d(0, calc(var(--scrollTop) / 5.6), 0);
+}
